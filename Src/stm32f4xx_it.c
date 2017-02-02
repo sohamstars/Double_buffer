@@ -38,7 +38,8 @@
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
-
+extern uint32_t values[5];
+extern uint32_t values2[5];
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_adc1;
 extern ADC_HandleTypeDef hadc1;
@@ -207,7 +208,10 @@ void DMA2_Stream0_IRQHandler(void)
   /* USER CODE BEGIN DMA2_Stream0_IRQn 0 */
 
   /* USER CODE END DMA2_Stream0_IRQn 0 */
+	HAL_ADC_Stop_DMA(&hadc1);
   HAL_DMA_IRQHandler(&hdma_adc1);
+//	HAL_ADC_Start_DMA(&hadc1, values, values2, 5);
+	//HAL_ADC_Stop_DMA(&hadc1);
   /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
 
   /* USER CODE END DMA2_Stream0_IRQn 1 */

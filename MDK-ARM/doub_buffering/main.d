@@ -1,4 +1,4 @@
-doub_buffering\main.o: ../Src/main.c
+doub_buffering\main.o: ..\Src\main.c
 doub_buffering\main.o: ../Inc/main.h
 doub_buffering\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 doub_buffering\main.o: ../Inc/stm32f4xx_hal_conf.h
@@ -32,3 +32,5 @@ doub_buffering\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.
 doub_buffering\main.o: ../Inc/adc.h
 doub_buffering\main.o: ../Inc/dma.h
 doub_buffering\main.o: ../Inc/gpio.h
+doub_buffering\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+doub_buffering\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

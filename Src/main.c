@@ -36,15 +36,26 @@
 #include "adc.h"
 #include "dma.h"
 #include "gpio.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 uint32_t values[5];
-
+uint32_t values2[5];
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 void Error_Handler(void);
 
+
+
 int main(void)
 {
+
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration----------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
@@ -56,11 +67,18 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_ADC1_Init();
-
-  HAL_ADC_Start_DMA(&hadc1, values, 5);
+	memset(values, 0, 5);
+	memset(values2, 0 ,5);
+  HAL_ADC_Start_DMA(&hadc1, values, values2, 5);
   while (1)
   {
-	}
+  /* USER CODE END WHILE */
+
+  /* USER CODE BEGIN 3 */
+
+  }
+  /* USER CODE END 3 */
+
 }
 
 /** System Clock Configuration

@@ -185,7 +185,8 @@ HAL_StatusTypeDef HAL_DMAEx_MultiBufferStart_IT(DMA_HandleTypeDef *hdma, uint32_
   }
   
   /* Check callback functions */
-  if ((NULL == hdma->XferCpltCallback) || (NULL == hdma->XferM1CpltCallback) || (NULL == hdma->XferErrorCallback))
+  
+	if ((NULL == hdma->XferCpltCallback) || /*(NULL == hdma->XferM1CpltCallback) ||*/ (NULL == hdma->XferErrorCallback))
   {
     hdma->ErrorCode = HAL_DMA_ERROR_PARAM;
     return HAL_ERROR;

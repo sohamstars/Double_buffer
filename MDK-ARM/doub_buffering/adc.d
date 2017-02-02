@@ -1,4 +1,4 @@
-doub_buffering\adc.o: ../Src/adc.c
+doub_buffering\adc.o: ..\Src\adc.c
 doub_buffering\adc.o: ../Inc/adc.h
 doub_buffering\adc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 doub_buffering\adc.o: ../Inc/stm32f4xx_hal_conf.h
