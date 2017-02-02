@@ -42,6 +42,8 @@
 
 uint32_t values[5];
 uint32_t values2[5];
+uint8_t flag_change;
+uint8_t onetime = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 void Error_Handler(void);
@@ -50,13 +52,7 @@ void Error_Handler(void);
 
 int main(void)
 {
-
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
-  /* MCU Configuration----------------------------------------------------------*/
-
+	flag_change = 0;
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
@@ -69,14 +65,20 @@ int main(void)
   MX_ADC1_Init();
 	memset(values, 0, 5);
 	memset(values2, 0 ,5);
-  HAL_ADC_Start_DMA(&hadc1, values, values2, 5);
+  HAL_ADC_Start_DMA(&hadc1, values, 5);
   while (1)
   {
-  /* USER CODE END WHILE */
-
-  /* USER CODE BEGIN 3 */
-
-  }
+ /*  if (flag_change == 0 && onetime == 1)
+	 {
+		 HAL_ADC_Start_DMA(&hadc1, values2, 5);
+		 onetime = 0;
+	 }
+		else if(flag_change == 1 && onetime == 1)
+		{
+		 HAL_ADC_Start_DMA(&hadc1, values, 5);
+			onetime = 0;
+		}*/
+		}
   /* USER CODE END 3 */
 
 }

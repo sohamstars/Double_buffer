@@ -164,7 +164,6 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name></Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -201,7 +200,7 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>211</LineNumber>
+          <LineNumber>212</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>134218670</Address>
           <ByteObject>0</ByteObject>
@@ -212,7 +211,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\Src\stm32f4xx_it.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\doub_buffering\../Src/stm32f4xx_it.c\211</Expression>
+          <Expression>\\doub_buffering\../Src/stm32f4xx_it.c\212</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -225,6 +224,11 @@
           <count>1</count>
           <WinNumber>1</WinNumber>
           <ItemText>values</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>flag_change</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>

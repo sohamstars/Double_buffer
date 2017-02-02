@@ -1011,9 +1011,9 @@ void HAL_ADC_IRQHandler(ADC_HandleTypeDef* hadc)
   * @retval HAL status
   */
 
-HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData,uint32_t *pData2, uint32_t Length)
+//HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData,uint32_t *pData2, uint32_t Length)
 
-//HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length)
+HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData, uint32_t Length)
 {
   __IO uint32_t counter = 0U;
   
@@ -1099,8 +1099,8 @@ HAL_StatusTypeDef HAL_ADC_Start_DMA(ADC_HandleTypeDef* hadc, uint32_t* pData,uin
     hadc->Instance->CR2 |= ADC_CR2_DMA;
     
     /* Start the DMA channel */
-  //  HAL_DMA_Start_IT(hadc->DMA_Handle, (uint32_t)&hadc->Instance->DR, (uint32_t)pData, Length);
-	HAL_DMAEx_MultiBufferStart_IT(hadc->DMA_Handle,(uint32_t)&hadc->Instance->DR , (uint32_t)pData, (uint32_t)pData2 , Length);
+    HAL_DMA_Start_IT(hadc->DMA_Handle, (uint32_t)&hadc->Instance->DR, (uint32_t)pData, Length);
+//	HAL_DMAEx_MultiBufferStart_IT(hadc->DMA_Handle,(uint32_t)&hadc->Instance->DR , (uint32_t)pData, (uint32_t)pData2 , Length);
     
     /* Check if Multimode enabled */
     if(HAL_IS_BIT_CLR(ADC->CCR, ADC_CCR_MULTI))
