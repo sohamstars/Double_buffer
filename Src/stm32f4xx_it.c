@@ -40,7 +40,7 @@
 /* USER CODE END 0 */
 extern uint32_t values[5];
 extern uint32_t values2[5];
-extern uint8_t flag_change;
+uint8_t flag_change = 0;
 extern uint8_t onetime;
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_adc1;
@@ -212,19 +212,19 @@ void DMA2_Stream0_IRQHandler(void)
   /* USER CODE END DMA2_Stream0_IRQn 0 */
 	HAL_ADC_Stop_DMA(&hadc1);
   HAL_DMA_IRQHandler(&hdma_adc1);
-	HAL_ADC_Start_DMA(&hadc1, values, 5);
-/*	if(flag_change == 0)
+//	HAL_ADC_Start_DMA(&hadc1, values2, 5);
+	if(flag_change == 0)
 	{
-		//HAL_ADC_Start_DMA(&hadc1, values2, 5);
+		HAL_ADC_Start_DMA(&hadc1, values2, 5);
 		flag_change = 1;
 	}
 	else
 	{	
-		//HAL_ADC_Start_DMA(&hadc1, values, 5);
+		HAL_ADC_Start_DMA(&hadc1, values, 5);
 		flag_change = 0;
 	}
 	onetime = 1;
-	*/	//	HAL_ADC_Start_DMA(&hadc1, values, values2, 5);
+		//	HAL_ADC_Start_DMA(&hadc1, values, values2, 5);
 	//HAL_ADC_Stop_DMA(&hadc1);
   /* USER CODE BEGIN DMA2_Stream0_IRQn 1 */
 

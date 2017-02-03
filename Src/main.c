@@ -42,7 +42,7 @@
 
 uint32_t values[5];
 uint32_t values2[5];
-uint8_t flag_change;
+
 uint8_t onetime = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -52,7 +52,7 @@ void Error_Handler(void);
 
 int main(void)
 {
-	flag_change = 0;
+
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
